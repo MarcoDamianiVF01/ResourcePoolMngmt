@@ -1,0 +1,41 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "ResourcePoolRef.schema.json",
+    "title": "ResourcePoolRef",
+    "definitions": {
+        "ResourcePoolRef": {
+            "type": "object",
+            "description": "manages resource capacity with the resource state",
+            "properties": {
+                "@referredType": {
+                    "type": "string",
+                    "description": "The actual type of the target instance when needed for disambiguation."
+                },
+                "href": {
+                    "type": "string",
+                    "description": "Hyperlink to access the Resource Pool."
+                },
+                "id": {
+                    "type": "string",
+                    "description": "Identifier of an instance of the Resource Pool."
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Name of the related entity."
+                },
+                "resource": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "ResourceRef.schema.json#/definitions/ResourceRef"
+                    },
+                    "description": "Related resources."
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "Entity.schema.json#/Entity"
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,43 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "ReservationItem.schema.json",
+    "title": "ReservationItem",
+    "definitions": {
+        "ReservationItem": {
+            "type": "object",
+            "description": "An identified part of the reservation. A reservation is decomposed into one or more reservation items.",
+            "properties": {
+                "appliedCapacityAmount": {
+                    "$ref": "AppliedCapacityAmount.schema.json#/definitions/AppliedCapacityAmount",
+                    "description": "The amount of ResourceCapacityDemand applied to a CapacityAmount."
+                },
+                "resourceCapacityDemand": {
+                    "$ref": "ResourceCapacityDemand.schema.json#/definitions/ResourceCapacityDemand",
+                    "description": "The amount of capacity that is planned to be consumed or has been consumed."
+                },
+                "state": {
+                    "type": "string",
+                    "description": "The life cycle state of the each reservation item."
+                },
+                "relatedEntity": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "RelatedEntity.schema.json#/definitions/RelatedEntity"
+                    },
+                    "description": "Realated entity, such as place"
+                },
+                "resourcePoolRef": {
+                    "$ref": "ResourcePoolRef.schema.json#/definitions/ResourcePoolRef",
+                    "description": "Related resource pool"
+                },
+                "resourceSpecification": {
+                    "$ref": "ResourceSpecificationRef.schema.json#/definitions/ResourceSpecificationRef",
+                    "description": "Realated resource specification"
+                }
+            },
+            "allOf": [{
+                "$ref": "Entity.schema.json#/Entity"
+            }]
+        }
+    }
+}

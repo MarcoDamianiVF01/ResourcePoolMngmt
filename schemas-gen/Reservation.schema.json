@@ -1,0 +1,66 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "Reservation.schema.json",
+    "title": "Reservation",
+    "definitions": {
+        "Reservation": {
+            "type": "object",
+            "description": "reservation api resource",
+            "properties": {
+                "channel": {
+                    "$ref": "ChannelRef.schema.json#/definitions/ChannelRef",
+                    "description": "The channel defines the channel for selling product offerings."
+                },
+                "description": {
+                    "type": "string",
+                    "description": "free-text description of the reservation."
+                },
+                "href": {
+                    "type": "string",
+                    "description": "Hyperlink to access the reservation."
+                },
+                "id": {
+                    "type": "string",
+                    "description": "Identifier of an instance of the Reservation."
+                },
+                "productOffering": {
+                    "$ref": "ProductOfferingRef.schema.json#/definitions/ProductOfferingRef",
+                    "description": "Related ProductOffering."
+                },
+                "quantityOfReservationItem": {
+                    "type": "integer",
+                    "description": "Represents the number of reservationItems that make up the reservation."
+                },
+                "relatedParty": {
+                    "$ref": "RelatedParty.schema.json#/definitions/RelatedParty",
+                    "description": "A related party defines party or party role linked to a specific entity."
+                },
+                "requestedPeriod": {
+                    "$ref": "TimePeriod.schema.json#/definitions/TimePeriod",
+                    "description": "The period of time for which user requested to use the resources. \nThe user can request on the start date without the end date."
+                },
+                "reservationItem": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "ReservationItem.schema.json#/definitions/ReservationItem"
+                    },
+                    "description": "A list of reservation items."
+                },
+                "state": {
+                    "type": "string",
+                    "description": "The life cycle state of the reservation."
+                },
+                "validFor": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "The period of time for which the reservation is applicable."
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "Entity.schema.json#/Entity"
+                }
+            ]
+        }
+    }
+}

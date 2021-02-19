@@ -1,0 +1,24 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "AppliedCapacityAmount.schema.json",
+    "title": "AppliedCapacityAmount",
+    "definitions": {
+        "AppliedCapacityAmount": {
+            "type": "object",
+            "description": "The amount of ResourceCapacityDemand applied to a CapacityAmount.",
+            "properties": {
+                "amount": {
+                    "$ref": "Amount.schema.json#/definitions/Amount",
+                    "description": "The amount of AppliedCapacityAmount"
+                },
+                "timePeriod": {
+                    "$ref": "TimePeriod.schema.json#/definitions/TimePeriod",
+                    "description": "The time period of AppliedCapacityAmount"
+                }
+            },
+            "allOf": [{
+                "$ref": "Entity.schema.json#/Entity"
+            }]
+        }
+    }
+}

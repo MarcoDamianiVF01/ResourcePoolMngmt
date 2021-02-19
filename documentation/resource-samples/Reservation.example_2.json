@@ -1,0 +1,110 @@
+{
+    "id": "3616", 
+    "href": "https:/host:port/tmf-api/resourcePool/v1/reservation/3616", 
+    "description": "This  reservation ...", 
+    "validFor": "2018-06-20T00:00", 
+    "reservationState": "Completed", 
+    "relatedParty": {
+        "href": "https:/host:port/tmf-api/partyManagement/v2/organization/4074", 
+        "id": "4074", 
+        "name": "EC_1002", 
+        "role": "EnterpriseCustomer"
+    }, 
+    "productOfferingRef": {
+        "href": "https:/host:port/tmf-api/productCatalogManagement/v1/productOffering/9983", 
+        "id": "9983", 
+        "name": "Fiber offering"
+    }, 
+    "@schemaLocation" : " https://hostname:port/ResourcePoolManagement/v1/schema/resourceItemReservation",
+    "@type" : "resourceItemReservation",
+    "reservationItem": [
+        {
+            "quantity": 1, 
+            "subReservationState": "Completed", 
+            "resourceCapacity": {
+                "capacityDemandAmount": "10", 
+                "applicableTimePeriod": {
+                    "fromToDateTime": "2019-06-20T00:00"
+                }, 
+                "place": {
+                    "href": "https:/host:port/tmf-api/place/v1/place/9567", 
+                    "id": "9567", 
+                    "name": "Mitaka"
+                }
+            }, 
+            "appliedCapacityAmount": {
+                "appliedDemandAmount": "10", 
+                "resource": [
+                    {
+                        "id": "422", 
+                        "href": "http://hostname:port/resourceInventory/resource/422", 
+                        "@referredType":"phone number",
+                        "name": "07467339892"
+                    },
+                    { 
+                        "id": "423",
+                        "href": " http://hostname:port/resourceInventory/Resource/423",
+                        "@referredType":"phone number",
+                        "name":"07467339893" 
+                    },
+                    { 
+                        "id": "424",
+                        "href": " http://hostname:port/resourceInventory/Resource/424",
+                        "@referredType":"phone number",
+                        "name":"07467339894" 
+                    },
+                    { 
+                        "id": "425",
+                        "href": " http://hostname:port/resourceManagement/Resource/425",
+                        "@referredType":"phone number",
+                        "name":"07467339895" 
+                    },
+                    { 
+                        "id": "426",
+                        "href": " http://hostname:port/resourceInventory/Resource/426",
+                        "@referredType":"phone number",
+                        "name":"07467339896" 
+                    },
+                    { 
+                        "id": "427",
+                        "href": " http://hostname:port/resourceInventory/Resource/427",
+                        "@referredType":"phone number",
+                        "name":"07467339897" 
+                    },
+                    { 
+                        "id": "428",
+                        "href": " http://hostname:port/resourceInventory/Resource/428",
+                        "@referredType":"phone number",
+                        "name":"07467339898" 
+                    },
+                    { 
+                        "id": "429",
+                        "href": " http://hostname:port/resourceInventory/Resource/429",
+                        "@referredType":"phone number",
+                        "name":"07467339899" 
+                    },
+                    { 
+                        "id": "430",
+                        "href": " http://hostname:port/resourceInventory/Resource/430",
+                        "@referredType":"phone number",
+                        "name":"07467339900" 
+                    },
+                    { 
+                        "id": "431",
+                        "href": " http://hostname:port/resourceInventory/Resource/431",
+                        "@referredType":"phone number",
+                        "name":"07467339901" 
+                    }
+                ]
+                            }
+        }
+    ], 
+    "requestedPeriod": {
+        "fromToDateTime": "2018-06-20T00:00"
+    }, 
+    "channel": {
+        "href": "https:/host:port/tmf-api/productCatalogManagement/v1/channel/3192", 
+        "id": "3192", 
+        "name": "Online Channel"
+    }
+}

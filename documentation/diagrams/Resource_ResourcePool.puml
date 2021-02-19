@@ -1,0 +1,115 @@
+@startuml
+hide circle
+hide methods
+hide stereotype
+show <<Enumeration>> stereotype
+skinparam class {
+   BackgroundColor<<Enumeration>> #E6F5F7
+   BackgroundColor<<Ref>> #FFFFE0
+   BackgroundColor<<Pivot>> #FFFFFFF
+   BackgroundColor #FCF2E3
+}
+
+class ResourcePool  <<Pivot>> {
+    description : String
+    href : String
+    id : String
+    @baseType : String
+    @schemaLocation : Uri
+    @type : String
+}
+
+class ResourceRef  <<Ref>> {
+    href : String
+    id : String
+    name : String
+    value : String
+    @baseType : String
+    @referredType : String
+    @schemaLocation : Uri
+    @type : String
+}
+
+class ResourceSpecificationRef  <<Ref>> {
+    href : String
+    id : String
+    name : String
+    version : String
+    @baseType : String
+    @referredType : String
+    @schemaLocation : Uri
+    @type : String
+}
+
+class RelatedParty  {
+    href : String
+    id : String
+    name : String
+    role : String
+    @baseType : String
+    @referredType : String
+    @schemaLocation : Uri
+    @type : String
+}
+
+class Capacity  {
+    capacitySpecification : String
+    plannedOrActualCapacity : String
+    @baseType : String
+    @schemaLocation : Uri
+    @type : String
+}
+
+class PlaceRef  <<Ref>> {
+    href : String
+    id : String
+    name : String
+    @baseType : String
+    @referredType : String
+    @schemaLocation : Uri
+    @type : String
+}
+
+class CapacityAmount  {
+    timePeriod : TimePeriod
+    @baseType : String
+    @schemaLocation : Uri
+    @type : String
+}
+
+class Amount  {
+    amount : String
+    amountFrom : String
+    amountTo : String
+    rangeInterval : String
+    @baseType : String
+    @schemaLocation : Uri
+    @type : String
+}
+
+class AppliedCapacityAmount  {
+    timePeriod : TimePeriod
+    @baseType : String
+    @schemaLocation : Uri
+    @type : String
+}
+
+ResourcePool *-->  "0..*" Capacity : capacity
+
+Capacity *-->  "0..1" CapacityAmount : capacityAmount
+
+CapacityAmount *-->  "0..1" Amount : amount
+
+CapacityAmount *-->  "0..*" AppliedCapacityAmount : appliedCapacityAmount
+
+AppliedCapacityAmount *-right-> "0..1" Amount : amount
+
+ResourceRef "0..*" <-left-* ResourcePool : resource
+
+ResourcePool *-right-> "0..1" RelatedParty : relatedParty
+
+ResourceSpecificationRef "0..1" <--* ResourcePool : resourceSpecification
+
+PlaceRef "0..1" <-left-* Capacity : place
+
+@enduml

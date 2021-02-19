@@ -1,0 +1,40 @@
+{
+    "api 'Resource Pool Management'": {
+        "doc": "This is Swagger UI environment generated for the TMF Resource Pool Management specification",
+        "hostUrl": "https://serverRoot",
+        "basePath": "/tmf-api/resourcePoolManagement/v4/",
+        "version": "4.0",
+        "flavors": "regular",
+        "resources": [
+            "Reservation",
+            "ResourcePool",
+            "AvailabilityCheck",
+            "Push",
+            "Extract"
+        ],
+        "rules Reservation": {
+            "operations": "GET,POST,PATCH",
+            "mandatory in post": "relatedParty,reservationItem",
+            "patchable": "description,relatedParty,productOffering,reservationItem",
+            "notifications": [
+                "stateChange",
+                "informationRequired",
+                "creation",
+                "remove"
+            ]
+        },
+        "rules ResourcePool": {
+            "operations": "POST,PATCH,DELETE",
+            "patchable": "capacity"
+        },
+        "rules AvailabilityCheck": {
+            "operations": "GET,POST"
+        },
+        "rules Push": {
+            "operations": "GET,POST"
+        },
+        "rules Extract": {
+            "operations": "GET,POST"
+        }
+    }
+}

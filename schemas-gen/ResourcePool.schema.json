@@ -1,0 +1,52 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "ResourcePool.schema.json",
+    "title": "ResourcePool",
+    "definitions": {
+        "ResourcePool": {
+            "type": "object",
+            "description": "manages resource capacity with the resource state",
+            "properties": {
+                "capacity": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "Capacity.schema.json#/definitions/Capacity"
+                    },
+                    "description": "Specific ability of an entity measured in quantity and units of quantity over an extended period."
+                },
+                "description": {
+                    "type": "string",
+                    "description": "free-text description of the Resource Pool."
+                },
+                "href": {
+                    "type": "string",
+                    "description": "Hyperlink to access the Resource Pool."
+                },
+                "id": {
+                    "type": "string",
+                    "description": "Identifier of an instance of the Resource Pool."
+                },
+                "relatedParty": {
+                    "$ref": "RelatedParty.schema.json#/definitions/RelatedParty",
+                    "description": "A related party defines party or party role linked to a specific entity, who uses the resource of Resource Pool."
+                },
+                "resource": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "ResourceRef.schema.json#/definitions/ResourceRef"
+                    },
+                    "description": "Related resources."
+                },
+                "resourceSpecification": {
+                    "$ref": "ResourceSpecificationRef.schema.json#/definitions/ResourceSpecificationRef",
+                    "description": "Related resource specification"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "Entity.schema.json#/Entity"
+                }
+            ]
+        }
+    }
+}

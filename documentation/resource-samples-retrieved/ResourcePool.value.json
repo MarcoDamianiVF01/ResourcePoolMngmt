@@ -1,0 +1,73 @@
+{
+    "id": "6802",
+    "href": "https:/host:port/tmf-api/resourcePoolManagement/v1/resourcePool/6802",
+    "description": "StorageCapacity",
+    "relatedParty": "EnterpriseConpany",
+    "capacity": [
+        {
+            "plannedOrActualCapacity": "planned",
+            "capacitySpec": {
+                "href": "https:/host:port/tmf-api/resourcePool/v1/capacitySpecRef/5005",
+                "id": "5005"
+            },
+            "place": {
+                "href": "https:/host:port/tmf-api/place/v1/place/6075",
+                "id": "6075",
+                "name": "Mitaka"
+            },
+            "applicableTimePeriod": {
+                "fromToDateTime": "2018-06-20T00:00",
+                "validFor": "2018-06-20T00:00"
+            },
+            "relatedCapacity": [
+                {
+                    "href": "https:/host:port/tmf-api/resourcePool/v1/capacity/4313",
+                    "id": "4313"
+                }
+            ],
+            "capacityAmount": {
+                "capacityAmount": "500GB",
+                "appliedCapacityAmount": [
+                    {
+                        "appliedDemandAmount": "200GB",
+                        "resourceCapacityDemand": {
+                            "capacityDemandAmount": "200GB"
+                        }
+                    },
+                    {
+                        "appliedDemandAmount": "300GB",
+                        "resourceCapacityDemand": {
+                            "capacityDemandAmount": "300GB"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "plannedOrActualCapacity": "planned",
+            "capacitySpec": {
+                "href": "https:/host:port/tmf-api/resourcePool/v1/capacitySpecRef/5005",
+                "id": "5005"
+            },
+            "place": {
+                "href": "https:/host:port/tmf-api/place/v1/place/6075",
+                "id": "6075",
+                "name": "Mitaka"
+            },
+            "applicableTimePeriod": {
+                "fromToDateTime": "2018-06-20T00:00",
+                "validFor": "2018-06-20T00:00"
+            },
+            "relatedCapacity": [
+                {
+                    "href": "https:/host:port/tmf-api/resourcePool/v1/capacity/4313",
+                    "id": "4313"
+                }
+            ],
+            "capacityAmount": {
+                "capacityAmount": "1TB",
+                "appliedCapacityAmount": []
+            }
+        }
+    ]
+}

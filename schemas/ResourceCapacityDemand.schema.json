@@ -1,0 +1,24 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "ResourceCapacityDemand.schema.json",
+    "title": "ResourceCapacityDemand",
+    "definitions": {
+        "ResourceCapacityDemand": {
+            "type": "object",
+            "description": "the amount of capacity that is planned to be consumed or has been consumed.",
+            "properties": {
+                "amount": {
+                    "$ref": "Amount.schema.json#/definitions/Amount",
+                    "description": "The amount of ResourceCapacityDemand"
+                },
+                "timePeriod": {
+                    "$ref": "TimePeriod.schema.json#/definitions/TimePeriod",
+                    "description": "The time period of ResourceCapacityDemand"
+                }
+            },
+            "allOf": [{
+                "$ref": "Entity.schema.json#/Entity"
+            }]
+        }
+    }
+}

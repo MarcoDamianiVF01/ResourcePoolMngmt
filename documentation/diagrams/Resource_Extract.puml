@@ -1,0 +1,100 @@
+@startuml
+hide circle
+hide methods
+hide stereotype
+show <<Enumeration>> stereotype
+skinparam class {
+   BackgroundColor<<Enumeration>> #E6F5F7
+   BackgroundColor<<Ref>> #FFFFE0
+   BackgroundColor<<Pivot>> #FFFFFFF
+   BackgroundColor #FCF2E3
+}
+
+class Extract  <<Pivot>> {
+    href : String
+    id : String
+    @baseType : String
+    @schemaLocation : Uri
+    @type : String
+}
+
+class Capacity  {
+    capacitySpecification : String
+    plannedOrActualCapacity : String
+    @baseType : String
+    @schemaLocation : Uri
+    @type : String
+}
+
+class PlaceRef  <<Ref>> {
+    href : String
+    id : String
+    name : String
+    @baseType : String
+    @referredType : String
+    @schemaLocation : Uri
+    @type : String
+}
+
+class CapacityAmount  {
+    timePeriod : TimePeriod
+    @baseType : String
+    @schemaLocation : Uri
+    @type : String
+}
+
+class Amount  {
+    amount : String
+    amountFrom : String
+    amountTo : String
+    rangeInterval : String
+    @baseType : String
+    @schemaLocation : Uri
+    @type : String
+}
+
+class AppliedCapacityAmount  {
+    timePeriod : TimePeriod
+    @baseType : String
+    @schemaLocation : Uri
+    @type : String
+}
+
+class ResourcePoolRef  <<Ref>> {
+    href : String
+    id : String
+    name : String
+    @baseType : String
+    @referredType : String
+    @schemaLocation : Uri
+    @type : String
+}
+
+class ResourceRef  <<Ref>> {
+    href : String
+    id : String
+    name : String
+    value : String
+    @baseType : String
+    @referredType : String
+    @schemaLocation : Uri
+    @type : String
+}
+
+Extract *-->  "0..1" Capacity : capacity
+
+Capacity *-->  "0..1" CapacityAmount : capacityAmount
+
+CapacityAmount *-->  "0..1" Amount : amount
+
+CapacityAmount *-->  "0..*" AppliedCapacityAmount : appliedCapacityAmount
+
+AppliedCapacityAmount *-right-> "0..1" Amount : amount
+
+Extract *-right-> "0..1" ResourcePoolRef : resourcePool
+
+PlaceRef "0..1" <-left-* Capacity : place
+
+ResourcePoolRef *-->  "0..*" ResourceRef : resource
+
+@enduml

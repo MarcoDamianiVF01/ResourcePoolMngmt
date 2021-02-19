@@ -1,0 +1,34 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "Extract.schema.json",
+    "title": "Extract",
+    "definitions": {
+        "Extract": {
+            "type": "object",
+            "description": "the extract task resource for resource pool management",
+            "properties": {
+                "capacity": {
+                    "$ref": "Capacity.schema.json#/definitions/Capacity",
+                    "description": "Specific ability of an entity measured in quantity and units of quantity over an extended period."
+                },
+                "href": {
+                    "type": "string",
+                    "description": "Hyperlink to access the availableCheck task for resource pool Management"
+                },
+                "id": {
+                    "type": "string",
+                    "description": "Identifier of an instance of the extract task for resource pool Management"
+                },
+                "resourcePool": {
+                    "$ref": "ResourcePoolRef.schema.json#/definitions/ResourcePoolRef",
+                    "description": "manages resource capacity with the resource state."
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "Entity.schema.json#/Entity"
+                }
+            ]
+        }
+    }
+}

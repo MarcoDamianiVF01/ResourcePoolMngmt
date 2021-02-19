@@ -1,0 +1,62 @@
+{
+    "id": "3616", 
+    "href": "https:/host:port/tmf-api/resourcePool/v1/reservation/3616", 
+    "description": "This  reservation ...", 
+    "validFor": "2018-06-20T00:00", 
+    "reservationState": "in progress", 
+    "relatedParty": {
+        "href": "https:/host:port/tmf-api/partyManagement/v2/organization/4074", 
+        "id": "4074", 
+        "name": "EU_2001", 
+        "role": "Enterprise User"
+    }, 
+    "productOfferingRef": {
+        "href": "https:/host:port/tmf-api/productCatalogManagement/v1/productOffering/9983", 
+        "id": "9983", 
+        "name": "Contents Service"
+    }, 
+    "@schemaLocation" : " https://host:port/ResourcePoolManagement/v1/schema/resourceItemReservation",
+    "@type" : "resourceItemReservation",
+    "reservationItem": [
+        {
+            "quantity": 1, 
+            "subReservationState": "in Progress", 
+                "resourceCapacity": {
+                    "capacityDemandAmount": "10gb", 
+                    "resourcePool": {
+                        "href": "https:/host:port/tmf-api/resourcePoolManagement/v1/resourcePool/3036", 
+                        "id": "3036"
+                    }, 
+                    "applicableTimePeriod": {
+                        "fromToDateTime": "2019-06-20T00:00", 
+                        "validFor": "2018-06-20T00:00"
+                    }
+                }
+            },
+
+        {
+            "quantity": 2, 
+            "subReservationState": "in Progress", 
+                "resourceCapacity": {
+                    "capacityDemandAmount": "10gb", 
+                    "resourcePool": {
+                        "href": "https:/host:port/tmf-api/resourcePoolManagement/v1/resourcePool/3036", 
+                        "id": "3036"
+                    }, 
+                    "applicableTimePeriod": {
+                        "fromToDateTime": "2019-06-20T00:00", 
+                        "validFor": "2018-06-20T00:00"
+                    }
+                }
+            }
+        
+    ], 
+    "requestedPeriod": {
+        "fromToDateTime": "2018-06-20T00:00"
+    }, 
+    "channel": {
+        "href": "https:/host:port/tmf-api/productCatalogManagement/v1/channel/3192", 
+        "id": "3192", 
+        "name": "Online Channel"
+    }
+}

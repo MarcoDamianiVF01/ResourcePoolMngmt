@@ -1,0 +1,85 @@
+{
+    "apis": {
+        "Resource Pool Management": {
+            "doc": "This is Swagger UI environment generated for the TMF Resource Pool Management specification",
+            "hostUrl": "https://serverRoot",
+            "basePath": "/tmf-api/resourcePoolManagement/v4/",
+            "version": "4.0",
+            "flavors": [
+                "regular"
+            ],
+            "resources": {
+                "ANY": [
+                    "Reservation",
+                    "ResourcePool",
+                    "AvailabilityCheck",
+                    "Push",
+                    "Extract"
+                ]
+            },
+            "rules": {
+                "Reservation": {
+                    "ANY": {
+                        "operations": [
+                            "GET",
+                            "POST",
+                            "PATCH"
+                        ],
+                        "mandatory in post": [
+                            "relatedParty",
+                            "reservationItem"
+                        ],
+                        "patchable": [
+                            "description",
+                            "relatedParty",
+                            "productOffering",
+                            "reservationItem"
+                        ],
+                        "notifications": [
+                            "stateChange",
+                            "informationRequired",
+                            "creation",
+                            "remove"
+                        ]
+                    }
+                },
+                "ResourcePool": {
+                    "ANY": {
+                        "operations": [
+                            "POST",
+                            "PATCH",
+                            "DELETE"
+                        ],
+                        "patchable": [
+                            "capacity"
+                        ]
+                    }
+                },
+                "AvailabilityCheck": {
+                    "ANY": {
+                        "operations": [
+                            "GET",
+                            "POST"
+                        ]
+                    }
+                },
+                "Push": {
+                    "ANY": {
+                        "operations": [
+                            "GET",
+                            "POST"
+                        ]
+                    }
+                },
+                "Extract": {
+                    "ANY": {
+                        "operations": [
+                            "GET",
+                            "POST"
+                        ]
+                    }
+                }
+            }
+        }
+    }
+}

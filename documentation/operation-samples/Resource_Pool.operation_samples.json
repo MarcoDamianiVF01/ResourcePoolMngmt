@@ -1,0 +1,173 @@
+{
+    "Reservation": {
+        "list": {
+            "samples": [
+                {
+                    "description": "Here's an example of a request for retrieving Reservation resources.",
+                    "content-type": "application/json", 
+                    "response" : "$_Reservation_list_1_response"
+                }
+            ]
+        }, 
+        "retrieve": {
+            "samples" : [
+                {
+                    "description": "Here's an example of a request for retrieving a Reservation resource",
+                    "content-type": "application/json",
+                    "objectId": "3616",  
+                    "response" : "$_Reservation_retrieve_1_response"
+                }
+            ]
+        }, 
+        "create": {
+            "samples" : [
+		        {
+                    "description" : "Here's an example of a request for creating a Reservation resource. In this example the request only passes mandatory attributes.",
+                    "content-type": "application/json",
+                    "request" : "$_Reservation_create_1_request",
+                    "response" : "$_Reservation_create_1_response"
+		        } 
+            ]   
+        },
+        "partialupdate": {
+            "samples" : [
+		        {
+                    "description" : "Here's an example of a request for patching a Reservation resource.",
+		            "content-type" : "application/merge-patch+json",
+                    "objectId": "3616", 
+                    "request" : "$_Reservation_partialupdate_1_request",
+                    "response" : "$_Reservation_partialupdate_1_response"
+		        } 
+            ]   
+        }
+    },
+    
+    "ResourcePool": {
+        "create": {
+            "samples" : [
+		        {
+                    "description" : "Here's an example of a request for creating a ResourcePool resource. In this example the request only passes mandatory attributes.",
+                    "content-type": "application/json",
+                    "request" : "$_ResourcePool_create_1_request",
+                    "response" : "$_ResourcePool_create_1_response"
+		        } 
+            ]   
+        },
+        "partialupdate": {
+            "samples" : [
+		        {
+                    "description" : "Here's an example of a request for patching a ResourcePool resource.",
+		            "content-type" : "application/merge-patch+json",
+                    "objectId": "6802", 
+                    "request" : "$_ResourcePool_partialupdate_1_request",
+                    "response" : "$_ResourcePool_partialupdate_1_response"
+		        } 
+            ]   
+        },
+        "delete": {
+	        "samples" : [
+		        {
+		            "description": "This operation deletes a ResourcePool resource.",
+		            "objectId" : "42"
+		        }
+	        ]
+	    }
+    },
+    
+    "AvailabilityCheck": {
+        "list": {
+            "samples": [
+                {
+                    "description": "Here's an example of a request for retrieving AvailabilityCheck resources.",
+                    "content-type": "application/json", 
+                    "response" : "$_AvailabilityCheck_list_1_response"
+                }
+            ]
+        }, 
+        "retrieve": {
+            "samples" : [
+                {
+                    "description": "Here's an example of a request for retrieving a AvailabilityCheck resource",
+                    "content-type": "application/json",
+                    "objectId": "3504",  
+                    "response" : "$_AvailabilityCheck_retrieve_1_response"
+                }
+            ]
+        }, 
+        "create": {
+            "samples" : [
+		        {
+                    "description" : "Here's an example of a request for creating a AvailabilityCheck resource. In this example the request only passes mandatory attributes.",
+                    "content-type": "application/json",
+                    "request" : "$_AvailabilityCheck_create_1_request",
+                    "response" : "$_AvailabilityCheck_create_1_response"
+		        } 
+            ]   
+        }
+    },
+    
+    "Push": {
+        "list": {
+            "samples": [
+                {
+                    "description": "Here's an example of a request for retrieving Push resources.",
+                    "content-type": "application/json", 
+                    "response" : "$_Push_list_1_response"
+                }
+            ]
+        }, 
+        "retrieve": {
+            "samples" : [
+                {
+                    "description": "Here's an example of a request for retrieving a Push resource",
+                    "content-type": "application/json",
+                    "objectId": "8121",  
+                    "response" : "$_Push_retrieve_1_response"
+                }
+            ]
+        }, 
+        "create": {
+            "samples" : [
+		        {
+                    "description" : "Here's an example of a request for creating a Push resource. In this example the request only passes mandatory attributes.",
+                    "content-type": "application/json",
+                    "request" : "$_Push_create_1_request",
+                    "response" : "$_Push_create_1_response"
+		        } 
+            ]   
+        }
+    },
+    
+    "Extract": {
+        "list": {
+            "samples": [
+                {
+                    "description": "Here's an example of a request for retrieving Extract resources.",
+                    "content-type": "application/json", 
+                    "response" : "$_Extract_list_1_response"
+                }
+            ]
+        }, 
+        "retrieve": {
+            "samples" : [
+                {
+                    "description": "Here's an example of a request for retrieving a Extract resource",
+                    "content-type": "application/json",
+                    "objectId": "8351",  
+                    "response" : "$_Extract_retrieve_1_response"
+                }
+            ]
+        }, 
+        "create": {
+            "samples" : [
+		        {
+                    "description" : "Here's an example of a request for creating a Extract resource. In this example the request only passes mandatory attributes.",
+                    "content-type": "application/json",
+                    "request" : "$_Extract_create_1_request",
+                    "response" : "$_Extract_create_1_response"
+		        } 
+            ]   
+        }
+    }
+}
+    

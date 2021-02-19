@@ -1,0 +1,32 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "Amount.schema.json",
+    "title": "Amount",
+    "definitions": {
+        "Amount": {
+            "type": "object",
+            "description": "Amount",
+            "properties": {
+                "amount": {
+                    "type": "string",
+                    "description": "A value and units, such as 10000 ea, 10B Mb. Instance values are mutually exclusive with From and To Amounts and range interval."
+                },
+                "amountFrom": {
+                    "type": "string",
+                    "description": "The low range value that Amount can take on."
+                },
+                "amountTo": {
+                    "type": "string",
+                    "description": "The upper range value that Amount can take on."
+                },
+                "rangeInterval": {
+                    "type": "string",
+                    "description": "An indicator that specifies the inclusion or exclusion of the AmountFrom and AmountTo attributes. \nPossible values are \"open\", \"closed\", \"closedBottom\" and \"closedTop\"."
+                }
+            },
+            "allOf": [{
+                "$ref": "Entity.schema.json#/Entity"
+            }]
+        }
+    }
+}

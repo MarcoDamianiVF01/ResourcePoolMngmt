@@ -1,0 +1,9 @@
+{
+    "description": "Storage Pool",
+    "capacity": [{
+            "capacitySpec": {
+                "href": "https:/host:port/tmf-api/resourcePool/v1/capacitySpecRef/5005", 
+                "id": "5005"
+            }
+    }]
+}

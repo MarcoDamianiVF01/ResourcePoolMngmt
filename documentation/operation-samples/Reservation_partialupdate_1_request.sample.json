@@ -1,0 +1,42 @@
+{
+    "reservationItem": [
+        {
+            "quantity": 1, 
+            "subReservationState": "Completed", 
+            "resourceCapacity": {
+                "capacityDemandAmount": "1", 
+                "applicableTimePeriod": {
+                    "fromToDateTime": "2018-06-20T00:00"
+                }, 
+                "place": {
+                    "href": "https:/host:port/tmf-api/place/v1/place/9567", 
+                    "id": "9567", 
+                    "name": "Mitaka"
+                },
+                "resourcePool": {
+                    "href": "https:/host:port/tmf-api/resourcePoolManagement/v1/resourcePool/5769", 
+                    "id": "5769", 
+                    "resourceCollection": [
+                        {
+                            "href": "https:/host:port/tmf-api/resourcePool/v1/resourceCollectionRef/6600", 
+                            "name": "Phone Number Pool", 
+                            "objectId": "258"
+                        }
+                    ]
+                }
+            }, 
+            "appliedCapacityAmount": {
+                "appliedDemandAmount": "1", 
+                "resource": [
+                    {
+                        "description": "Phone Number Reservation", 
+                        "href": "http://hostname:port/resourceInventory/resource/422", 
+                        "id": "422", 
+                        "name": "07467339896"
+                    }
+                ]
+                
+            }
+        }
+    ]
+}

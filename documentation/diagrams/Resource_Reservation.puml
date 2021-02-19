@@ -1,0 +1,155 @@
+@startuml
+hide circle
+hide methods
+hide stereotype
+show <<Enumeration>> stereotype
+skinparam class {
+   BackgroundColor<<Enumeration>> #E6F5F7
+   BackgroundColor<<Ref>> #FFFFE0
+   BackgroundColor<<Pivot>> #FFFFFFF
+   BackgroundColor #FCF2E3
+}
+
+class Reservation  <<Pivot>> {
+    description : String
+    href : String
+    id : String
+    quantityOfReservationItem : Integer
+    requestedPeriod : TimePeriod
+    state : String
+    validFor : DateTime
+    @baseType : String
+    @schemaLocation : Uri
+    @type : String
+}
+
+class ProductOfferingRef  <<Ref>> {
+    href : String
+    id : String
+    name : String
+    @baseType : String
+    @referredType : String
+    @schemaLocation : Uri
+    @type : String
+}
+
+class ReservationItem  {
+    state : String
+    @baseType : String
+    @schemaLocation : Uri
+    @type : String
+}
+
+class ResourcePoolRef  <<Ref>> {
+    href : String
+    id : String
+    name : String
+    @baseType : String
+    @referredType : String
+    @schemaLocation : Uri
+    @type : String
+}
+
+class ResourceRef  <<Ref>> {
+    href : String
+    id : String
+    name : String
+    value : String
+    @baseType : String
+    @referredType : String
+    @schemaLocation : Uri
+    @type : String
+}
+
+class AppliedCapacityAmount  {
+    timePeriod : TimePeriod
+    @baseType : String
+    @schemaLocation : Uri
+    @type : String
+}
+
+class Amount  {
+    amount : String
+    amountFrom : String
+    amountTo : String
+    rangeInterval : String
+    @baseType : String
+    @schemaLocation : Uri
+    @type : String
+}
+
+class RelatedEntity  {
+    href : String
+    id : String
+    name : String
+    role : String
+    @baseType : String
+    @referredType : String
+    @schemaLocation : Uri
+    @type : String
+}
+
+class ResourceCapacityDemand  {
+    timePeriod : TimePeriod
+    @baseType : String
+    @schemaLocation : Uri
+    @type : String
+}
+
+class ResourceSpecificationRef  <<Ref>> {
+    href : String
+    id : String
+    name : String
+    version : String
+    @baseType : String
+    @referredType : String
+    @schemaLocation : Uri
+    @type : String
+}
+
+class ChannelRef  <<Ref>> {
+    href : String
+    id : String
+    name : String
+    @baseType : String
+    @referredType : String
+    @schemaLocation : Uri
+    @type : String
+}
+
+class RelatedParty  {
+    href : String
+    id : String
+    name : String
+    role : String
+    @baseType : String
+    @referredType : String
+    @schemaLocation : Uri
+    @type : String
+}
+
+Reservation *-right-> "0..*" ReservationItem : reservationItem
+
+ReservationItem *-->  "0..1" AppliedCapacityAmount : appliedCapacityAmount
+
+ReservationItem *-->  "0..1" ResourceCapacityDemand : resourceCapacityDemand
+
+AppliedCapacityAmount *-->  "0..1" Amount : amount
+
+ResourceCapacityDemand *-->  "0..1" Amount : amount
+
+ReservationItem *-right-> "0..*" RelatedEntity : relatedEntity
+
+ResourcePoolRef "0..1" <--* ReservationItem : resourcePoolRef
+
+ResourceSpecificationRef "0..1" <--* ReservationItem : resourceSpecification
+
+ChannelRef "0..1" <--* Reservation : channel
+
+Reservation *-->  "0..1" ProductOfferingRef : productOffering
+
+Reservation *-->  "0..1" RelatedParty : relatedParty
+
+ResourcePoolRef *-right-> "0..*" ResourceRef : resource
+
+@enduml

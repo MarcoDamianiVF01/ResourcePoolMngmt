@@ -1,0 +1,34 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "Capacity.schema.json",
+    "title": "Capacity",
+    "definitions": {
+        "Capacity": {
+            "type": "object",
+            "description": "Specific ability of an entity measured in quantity and units of quantity over an extended period.",
+            "properties": {
+                "capacityAmount": {
+                    "$ref": "CapacityAmount.schema.json#/definitions/CapacityAmount",
+                    "description": "quantity that defines the Capacity."
+                },
+                "capacitySpecification": {
+                    "type": "string",
+                    "description": "The specification of capacity"
+                },
+                "place": {
+                    "$ref": "PlaceRef.schema.json#/definitions/PlaceRef",
+                    "description": "Used to define a place useful for the resource. \nUsed to indicate reserved resources."
+                },
+                "plannedOrActualCapacity": {
+                    "type": "string",
+                    "description": "An indicator that specifies whether the capacity is planned or actual."
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "Entity.schema.json#/Entity"
+                }
+            ]
+        }
+    }
+}

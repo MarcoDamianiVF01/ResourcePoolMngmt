@@ -1,0 +1,32 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "Push.schema.json",
+    "title": "Push",
+    "definitions": {
+        "Push": {
+            "type": "object",
+            "description": "the push task resource for resource pool management",
+            "properties": {
+                "href": {
+                    "type": "string",
+                    "description": "Hyperlink to access the push task for resource pool Management"
+                },
+                "id": {
+                    "type": "string",
+                    "description": "Identifier of an instance of the push task resource"
+                },
+                "capacity": {
+                    "$ref": "Capacity.schema.json#/definitions/Capacity",
+                    "description": "Specific ability of an entity measured in quantity and units of quantity over an extended period."
+                },
+                "resourcePool": {
+                    "$ref": "ResourcePoolRef.schema.json#/definitions/ResourcePoolRef",
+                    "description": "manages resource capacity with the resource state."
+                }
+            },
+            "allOf": [{
+                "$ref": "Entity.schema.json#/Entity"
+            }]
+        }
+    }
+}

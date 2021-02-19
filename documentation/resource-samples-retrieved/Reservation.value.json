@@ -1,0 +1,15 @@
+{
+    "channel": {},
+    "description": "This  reservation ...",
+    "href": "https:/host:port/tmf-api/reservation/v1/reservation/2453",
+    "id": "2453",
+    "productOffering": {},
+    "quantityOfReservationItem": 11,
+    "relatedParty": {},
+    "requestedPeriod": {},
+    "reservationItem": [
+        {}
+    ],
+    "state": "a string ...",
+    "validFor": "2020-02-19T00:00"
+}

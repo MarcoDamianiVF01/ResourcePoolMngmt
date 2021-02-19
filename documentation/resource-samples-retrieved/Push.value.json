@@ -1,0 +1,27 @@
+{
+    "id": "8121",
+    "href": "https:/host:port/tmf-api/resourcePool/v1/push/8121",
+    "capacity": {
+        "plannedOrActualCapacity": "Actual",
+        "capacitySpec": {
+            "href": "https:/host:port/tmf-api/resourcePool/v1/capacitySpecRef/3444",
+            "id": "3444"
+        },
+        "place": {
+            "href": "https:/host:port/tmf-api/place/v1/place/2080",
+            "id": "2080",
+            "name": "Mitaka"
+        },
+        "applicableTimePeriod": {
+            "fromToDateTime": "2018-06-20T00:00",
+            "validFor": "2018-06-20T00:00"
+        },
+        "capacityAmount": {
+            "capacityAmount": "1TB"
+        }
+    },
+    "resourcePool": {
+        "href": "https:/host:port/tmf-api/resourcePoolManagement/v1/resourcePool/9602",
+        "id": "9602"
+    }
+}

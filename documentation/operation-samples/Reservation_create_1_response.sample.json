@@ -1,0 +1,37 @@
+{
+    "href": "https:/host:port/tmf-api/resourcePool/v1/reservation/3616", 
+    "id": "3616", 
+    "productOfferingRef": {
+        "href": "https:/host:port/tmf-api/productCatalogManagement/v1/productOffering/9983",
+        "id": "9983",
+        "name": "Fiber offering"
+    },
+    "reservationItem": [
+        {
+            "quantity": 2, 
+            "resourceCapacity": {
+                "capacityDemandAmount": "1",
+                "resourcePool": {
+                    "href": "https:/host:port/tmf-api/resourcePoolManagement/v1/resourcePool/5769",
+                    "id": "5769",
+                    "resourceCollection": [
+                        {
+                            "href": "https:/host:port/tmf-api/resourcePool/v1/resourceCollectionRef/6600",
+                            "name": "Phone Number Pool",
+                            "objectId": "258"
+                        }
+                    ] 
+                }
+            }
+        }
+    ], 
+    "requestedPeriod": {
+        "fromToDateTime": "2018-06-20T00:00"
+    },
+    "relatedParty": {
+        "href": "https:/host:port/tmf-api/partyManagement/v2/organization/4074",
+        "id": "4074",
+        "name": "EC_1002",
+        "role": "EnterpriseCustomer"
+    }
+}

@@ -1,0 +1,20 @@
+{
+    "id": "3504", 
+    "href": "https:/host:port/tmf-api/resourcePool/v1/availabilityCheck/3504", 
+    "resourceCapacityDemand": {
+        "capacityDemandAmount": "5", 
+        "resourcePool": {
+            "href": "https:/host:port/tmf-api/resourcePoolManagement/v1/resourcePool/6456", 
+            "id": "6456"
+        }, 
+        "applicableTimePeriod": {
+            "fromToDateTime": "2018-06-20T00:00", 
+            "validFor": "2018-06-20T00:00"
+        }, 
+        "place": {
+            "href": "https:/host:port/tmf-api/place/v1/place/7076", 
+            "id": "7076", 
+            "name": "Mitaka"
+        }
+    }
+}

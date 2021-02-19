@@ -1,0 +1,64 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "AvailabilityCheck.schema.json",
+    "title": "AvailabilityCheck",
+    "definitions": {
+        "AvailabilityCheck": {
+            "type": "object",
+            "description": "the availabilityCheck task resource for resource pool management",
+            "properties": {
+                "channel": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "ChannelRef.schema.json#/definitions/ChannelRef"
+                    },
+                    "description": "The channel defines the channel for selling product offerings."
+                },
+                "href": {
+                    "type": "string",
+                    "description": "Hyperlink to access the availabilityCheck task for resource pool Management"
+                },
+                "id": {
+                    "type": "string",
+                    "description": "Identifier of an instance of the availabilityCheck task for resource pool Management"
+                },
+                "productOffering": {
+                    "$ref": "ProductOfferingRef.schema.json#/definitions/ProductOfferingRef",
+                    "description": "Related ProductOffering."
+                },
+                "relatedEntity": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "RelatedEntity.schema.json#/definitions/RelatedEntity"
+                    },
+                    "description": "Realated entity, such as place"
+                },
+                "relatedParty": {
+                    "$ref": "RelatedPartyRef.schema.json#/definitions/RelatedPartyRef",
+                    "description": "A related party defines party or party role linked to a specific entity."
+                },
+                "requestedPeriod": {
+                    "$ref": "TimePeriod.schema.json#/definitions/TimePeriod",
+                    "description": " The period of time for which user requested to use the resources. \nThe user can request on the start date without the end date."
+                },
+                "resourceCapacityDemand": {
+                    "$ref": "ResourceCapacityDemand.schema.json#/definitions/ResourceCapacityDemand",
+                    "description": "the amount of capacity that is planned to be consumed or has been consumed."
+                },
+                "resourcePoolRef": {
+                    "$ref": "ResourcePoolRef.schema.json#/definitions/ResourcePoolRef",
+                    "description": "Related resource pool"
+                },
+                "resourceSpecification": {
+                    "$ref": "ResourceSpecificationRef.schema.json#/definitions/ResourceSpecificationRef",
+                    "description": "Realated resource specification"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "Entity.schema.json#/Entity"
+                }
+            ]
+        }
+    }
+}

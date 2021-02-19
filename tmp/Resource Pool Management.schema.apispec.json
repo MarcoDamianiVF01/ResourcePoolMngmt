@@ -1,0 +1,595 @@
+{
+    "name": "Resource Pool Management",
+    "id": "resourcePoolManagement",
+    "version": "4.0",
+    "hostUrl": "https://serverRoot",
+    "basePath": "/tmf-api/resourcePoolManagement/v4/",
+    "description": "This is Swagger UI environment generated for the TMF Resource Pool Management specification",
+    "regularResources": [
+        "reservation",
+        "extract",
+        "push",
+        "resourcePool",
+        "availabilityCheck"
+    ],
+    "eventResources": [],
+    "usedClassesInRegularApi": [
+        "Amount",
+        "AppliedCapacityAmount",
+        "AvailabilityCheck",
+        "Capacity",
+        "CapacityAmount",
+        "ChannelRef",
+        "EntityRef",
+        "Extract",
+        "PlaceRef",
+        "ProductOfferingRef",
+        "Push",
+        "RelatedEntity",
+        "RelatedParty",
+        "RelatedPartyRef",
+        "Reservation",
+        "ReservationItem",
+        "ResourceCapacityDemand",
+        "ResourcePool",
+        "ResourcePoolRef",
+        "ResourceRef",
+        "ResourceSpecificationRef",
+        "TimePeriod"
+    ],
+    "usedClassesInEventsApi": [],
+    "resourceClasses": [
+        "Reservation",
+        "Extract",
+        "Push",
+        "ResourcePool",
+        "AvailabilityCheck"
+    ],
+    "resources": [
+        {
+            "name": "reservation",
+            "class": "Reservation",
+            "documentation": "reservation api resource",
+            "actions": [
+                "list",
+                "retrieve",
+                "create",
+                "update",
+                "partialupdate",
+                "delete"
+            ],
+            "attributes": [
+                "channel",
+                "description",
+                "href",
+                "id",
+                "productOffering",
+                "quantityOfReservationItem",
+                "relatedParty",
+                "requestedPeriod",
+                "reservationItem",
+                "state",
+                "validFor"
+            ],
+            "attributeDetails": {
+                "channel": {
+                    "type": "ChannelRef",
+                    "multiplicity": "0..1",
+                    "documentation": "The channel defines the channel for selling product offerings."
+                },
+                "description": {
+                    "type": "String",
+                    "multiplicity": "0..1",
+                    "documentation": "free-text description of the reservation."
+                },
+                "href": {
+                    "type": "String",
+                    "multiplicity": "0..1",
+                    "documentation": "Hyperlink to access the reservation."
+                },
+                "id": {
+                    "type": "String",
+                    "multiplicity": "0..1",
+                    "documentation": "Identifier of an instance of the Reservation."
+                },
+                "productOffering": {
+                    "type": "ProductOfferingRef",
+                    "multiplicity": "0..1",
+                    "documentation": "Related ProductOffering."
+                },
+                "quantityOfReservationItem": {
+                    "type": "Integer",
+                    "multiplicity": "0..1",
+                    "documentation": "Represents the number of reservationItems that make up the reservation."
+                },
+                "relatedParty": {
+                    "type": "RelatedParty",
+                    "multiplicity": "0..1",
+                    "documentation": "A related party defines party or party role linked to a specific entity."
+                },
+                "requestedPeriod": {
+                    "type": "TimePeriod",
+                    "multiplicity": "0..1",
+                    "documentation": "The period of time for which user requested to use the resources. \nThe user can request on the start date without the end date."
+                },
+                "reservationItem": {
+                    "type": "ReservationItem",
+                    "multiplicity": "*",
+                    "documentation": "A list of reservation items."
+                },
+                "state": {
+                    "type": "String",
+                    "multiplicity": "0..1",
+                    "documentation": "The life cycle state of the reservation."
+                },
+                "validFor": {
+                    "type": "DateTime",
+                    "multiplicity": "0..1",
+                    "documentation": "The period of time for which the reservation is applicable."
+                }
+            }
+        },
+        {
+            "name": "extract",
+            "class": "Extract",
+            "documentation": "the extract task resource for resource pool management",
+            "actions": [
+                "list",
+                "retrieve",
+                "create",
+                "update",
+                "partialupdate",
+                "delete"
+            ],
+            "attributes": [
+                "capacity",
+                "href",
+                "id",
+                "resourcePool"
+            ],
+            "attributeDetails": {
+                "capacity": {
+                    "type": "Capacity",
+                    "multiplicity": "0..1",
+                    "documentation": "Specific ability of an entity measured in quantity and units of quantity over an extended period."
+                },
+                "href": {
+                    "type": "String",
+                    "multiplicity": "0..1",
+                    "documentation": "Hyperlink to access the availableCheck task for resource pool Management"
+                },
+                "id": {
+                    "type": "String",
+                    "multiplicity": "0..1",
+                    "documentation": "Identifier of an instance of the extract task for resource pool Management"
+                },
+                "resourcePool": {
+                    "type": "ResourcePoolRef",
+                    "multiplicity": "0..1",
+                    "documentation": "manages resource capacity with the resource state."
+                }
+            }
+        },
+        {
+            "name": "push",
+            "class": "Push",
+            "documentation": "the push task resource for resource pool management",
+            "actions": [
+                "list",
+                "retrieve",
+                "create",
+                "update",
+                "partialupdate",
+                "delete"
+            ],
+            "attributes": [
+                "capacity",
+                "href",
+                "id",
+                "resourcePool"
+            ],
+            "attributeDetails": {
+                "capacity": {
+                    "type": "Capacity",
+                    "multiplicity": "0..1",
+                    "documentation": "Specific ability of an entity measured in quantity and units of quantity over an extended period."
+                },
+                "href": {
+                    "type": "String",
+                    "multiplicity": "0..1",
+                    "documentation": "Hyperlink to access the push task for resource pool Management"
+                },
+                "id": {
+                    "type": "String",
+                    "multiplicity": "0..1",
+                    "documentation": "Identifier of an instance of the push task resource"
+                },
+                "resourcePool": {
+                    "type": "ResourcePoolRef",
+                    "multiplicity": "0..1",
+                    "documentation": "manages resource capacity with the resource state."
+                }
+            }
+        },
+        {
+            "name": "resourcePool",
+            "class": "ResourcePool",
+            "documentation": "manages resource capacity with the resource state",
+            "actions": [
+                "list",
+                "retrieve",
+                "create",
+                "update",
+                "partialupdate",
+                "delete"
+            ],
+            "attributes": [
+                "capacity",
+                "description",
+                "href",
+                "id",
+                "relatedParty",
+                "resource",
+                "resourceSpecification"
+            ],
+            "attributeDetails": {
+                "capacity": {
+                    "type": "Capacity",
+                    "multiplicity": "*",
+                    "documentation": "Specific ability of an entity measured in quantity and units of quantity over an extended period."
+                },
+                "description": {
+                    "type": "String",
+                    "multiplicity": "0..1",
+                    "documentation": "free-text description of the Resource Pool."
+                },
+                "href": {
+                    "type": "String",
+                    "multiplicity": "0..1",
+                    "documentation": "Hyperlink to access the Resource Pool."
+                },
+                "id": {
+                    "type": "String",
+                    "multiplicity": "0..1",
+                    "documentation": "Identifier of an instance of the Resource Pool."
+                },
+                "relatedParty": {
+                    "type": "RelatedParty",
+                    "multiplicity": "0..1",
+                    "documentation": "A related party defines party or party role linked to a specific entity, who uses the resource of Resource Pool."
+                },
+                "resource": {
+                    "type": "ResourceRef",
+                    "multiplicity": "*",
+                    "documentation": "Related resources."
+                },
+                "resourceSpecification": {
+                    "type": "ResourceSpecificationRef",
+                    "multiplicity": "0..1",
+                    "documentation": "Related resource specification"
+                }
+            }
+        },
+        {
+            "name": "availabilityCheck",
+            "class": "AvailabilityCheck",
+            "documentation": "the availabilityCheck task resource for resource pool management",
+            "actions": [
+                "list",
+                "retrieve",
+                "create",
+                "update",
+                "partialupdate",
+                "delete"
+            ],
+            "attributes": [
+                "channel",
+                "href",
+                "id",
+                "productOffering",
+                "relatedEntity",
+                "relatedParty",
+                "requestedPeriod",
+                "resourceCapacityDemand",
+                "resourcePoolRef",
+                "resourceSpecification"
+            ],
+            "attributeDetails": {
+                "channel": {
+                    "type": "ChannelRef",
+                    "multiplicity": "*",
+                    "documentation": "The channel defines the channel for selling product offerings."
+                },
+                "href": {
+                    "type": "String",
+                    "multiplicity": "0..1",
+                    "documentation": "Hyperlink to access the availabilityCheck task for resource pool Management"
+                },
+                "id": {
+                    "type": "String",
+                    "multiplicity": "0..1",
+                    "documentation": "Identifier of an instance of the availabilityCheck task for resource pool Management"
+                },
+                "productOffering": {
+                    "type": "ProductOfferingRef",
+                    "multiplicity": "0..1",
+                    "documentation": "Related ProductOffering."
+                },
+                "relatedEntity": {
+                    "type": "RelatedEntity",
+                    "multiplicity": "*",
+                    "documentation": "Realated entity, such as place"
+                },
+                "relatedParty": {
+                    "type": "RelatedPartyRef",
+                    "multiplicity": "0..1",
+                    "documentation": "A related party defines party or party role linked to a specific entity."
+                },
+                "requestedPeriod": {
+                    "type": "TimePeriod",
+                    "multiplicity": "0..1",
+                    "documentation": " The period of time for which user requested to use the resources. \nThe user can request on the start date without the end date."
+                },
+                "resourceCapacityDemand": {
+                    "type": "ResourceCapacityDemand",
+                    "multiplicity": "0..1",
+                    "documentation": "the amount of capacity that is planned to be consumed or has been consumed."
+                },
+                "resourcePoolRef": {
+                    "type": "ResourcePoolRef",
+                    "multiplicity": "0..1",
+                    "documentation": "Related resource pool"
+                },
+                "resourceSpecification": {
+                    "type": "ResourceSpecificationRef",
+                    "multiplicity": "0..1",
+                    "documentation": "Realated resource specification"
+                }
+            }
+        }
+    ],
+    "flavors": [
+        "regular"
+    ],
+    "resourcesByFlavors": {
+        "regular": {
+            "Reservation": {
+                "actions": [
+                    "list",
+                    "retrieve",
+                    "create",
+                    "partialupdate"
+                ],
+                "actionDetails": {
+                    "create": {
+                        "rules": {
+                            "MandatoryAttributes": {
+                                "mandatory": [
+                                    "relatedParty",
+                                    "reservationItem"
+                                ]
+                            },
+                            "PatchableAttributes": {
+                                "patchable": [
+                                    "description",
+                                    "relatedParty",
+                                    "productOffering",
+                                    "reservationItem"
+                                ]
+                            }
+                        }
+                    },
+                    "partialupdate": {
+                        "rules": {
+                            "PatchableAttributes": {
+                                "patchable": [
+                                    "description",
+                                    "relatedParty",
+                                    "productOffering",
+                                    "reservationItem"
+                                ]
+                            }
+                        }
+                    }
+                },
+                "notifications": [
+                    "stateChange",
+                    "informationRequired",
+                    "creation",
+                    "remove"
+                ]
+            },
+            "ResourcePool": {
+                "actions": [
+                    "create",
+                    "partialupdate",
+                    "delete"
+                ],
+                "actionDetails": {
+                    "create": {
+                        "rules": {
+                            "PatchableAttributes": {
+                                "patchable": [
+                                    "capacity"
+                                ]
+                            }
+                        }
+                    },
+                    "partialupdate": {
+                        "rules": {
+                            "PatchableAttributes": {
+                                "patchable": [
+                                    "capacity"
+                                ]
+                            }
+                        }
+                    }
+                },
+                "notifications": []
+            },
+            "AvailabilityCheck": {
+                "actions": [
+                    "list",
+                    "retrieve",
+                    "create"
+                ],
+                "actionDetails": {
+                    "create": {
+                        "rules": {}
+                    }
+                },
+                "notifications": []
+            },
+            "Push": {
+                "actions": [
+                    "list",
+                    "retrieve",
+                    "create"
+                ],
+                "actionDetails": {
+                    "create": {
+                        "rules": {}
+                    }
+                },
+                "notifications": []
+            },
+            "Extract": {
+                "actions": [
+                    "list",
+                    "retrieve",
+                    "create"
+                ],
+                "actionDetails": {
+                    "create": {
+                        "rules": {}
+                    }
+                },
+                "notifications": []
+            }
+        }
+    },
+    "flavorDefinitions": {
+        "flavorIds": [
+            "regular"
+        ],
+        "byFlavor": {
+            "regular": {
+                "resourceIds": [
+                    "Reservation",
+                    "ResourcePool",
+                    "AvailabilityCheck",
+                    "Push",
+                    "Extract"
+                ]
+            }
+        },
+        "allRegularResources": [
+            "Reservation",
+            "ResourcePool",
+            "AvailabilityCheck",
+            "Push",
+            "Extract"
+        ],
+        "allEventResources": [
+            "ReservationStateChangeEvent",
+            "ReservationInformationRequiredEvent",
+            "ReservationCreationEvent",
+            "ReservationRemoveEvent"
+        ],
+        "eventNotifications": {
+            "Reservation": [
+                "stateChange",
+                "informationRequired",
+                "creation",
+                "remove"
+            ]
+        },
+        "eventTargetClasses": {
+            "ReservationStateChangeEvent": "Reservation",
+            "ReservationInformationRequiredEvent": "Reservation",
+            "ReservationCreationEvent": "Reservation",
+            "ReservationRemoveEvent": "Reservation"
+        }
+    },
+    "modeledRules": {
+        "doc": "This is Swagger UI environment generated for the TMF Resource Pool Management specification",
+        "hostUrl": "https://serverRoot",
+        "basePath": "/tmf-api/resourcePoolManagement/v4/",
+        "version": "4.0",
+        "flavors": [
+            "regular"
+        ],
+        "resources": {
+            "regular": [
+                "Reservation",
+                "ResourcePool",
+                "AvailabilityCheck",
+                "Push",
+                "Extract"
+            ]
+        },
+        "rules": {
+            "Reservation": {
+                "regular": {
+                    "operations": [
+                        "GET",
+                        "POST",
+                        "PATCH"
+                    ],
+                    "mandatory in post": [
+                        "relatedParty",
+                        "reservationItem"
+                    ],
+                    "patchable": [
+                        "description",
+                        "relatedParty",
+                        "productOffering",
+                        "reservationItem"
+                    ],
+                    "notifications": [
+                        "stateChange",
+                        "informationRequired",
+                        "creation",
+                        "remove"
+                    ]
+                }
+            },
+            "ResourcePool": {
+                "regular": {
+                    "operations": [
+                        "POST",
+                        "PATCH",
+                        "DELETE"
+                    ],
+                    "patchable": [
+                        "capacity"
+                    ]
+                }
+            },
+            "AvailabilityCheck": {
+                "regular": {
+                    "operations": [
+                        "GET",
+                        "POST"
+                    ]
+                }
+            },
+            "Push": {
+                "regular": {
+                    "operations": [
+                        "GET",
+                        "POST"
+                    ]
+                }
+            },
+            "Extract": {
+                "regular": {
+                    "operations": [
+                        "GET",
+                        "POST"
+                    ]
+                }
+            }
+        }
+    }
+}

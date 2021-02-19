@@ -1,0 +1,131 @@
+@startuml
+hide circle
+hide methods
+hide stereotype
+show <<Enumeration>> stereotype
+skinparam class {
+   BackgroundColor<<Enumeration>> #E6F5F7
+   BackgroundColor<<Ref>> #FFFFE0
+   BackgroundColor<<Pivot>> #FFFFFFF
+   BackgroundColor #FCF2E3
+}
+
+class AvailabilityCheck  <<Pivot>> {
+    href : String
+    id : String
+    requestedPeriod : TimePeriod
+    @baseType : String
+    @schemaLocation : Uri
+    @type : String
+}
+
+class ResourcePoolRef  <<Ref>> {
+    href : String
+    id : String
+    name : String
+    @baseType : String
+    @referredType : String
+    @schemaLocation : Uri
+    @type : String
+}
+
+class ResourceRef  <<Ref>> {
+    href : String
+    id : String
+    name : String
+    value : String
+    @baseType : String
+    @referredType : String
+    @schemaLocation : Uri
+    @type : String
+}
+
+class ProductOfferingRef  <<Ref>> {
+    href : String
+    id : String
+    name : String
+    @baseType : String
+    @referredType : String
+    @schemaLocation : Uri
+    @type : String
+}
+
+class RelatedEntity  {
+    href : String
+    id : String
+    name : String
+    role : String
+    @baseType : String
+    @referredType : String
+    @schemaLocation : Uri
+    @type : String
+}
+
+class ResourceCapacityDemand  {
+    timePeriod : TimePeriod
+    @baseType : String
+    @schemaLocation : Uri
+    @type : String
+}
+
+class Amount  {
+    amount : String
+    amountFrom : String
+    amountTo : String
+    rangeInterval : String
+    @baseType : String
+    @schemaLocation : Uri
+    @type : String
+}
+
+class ChannelRef  <<Ref>> {
+    href : String
+    id : String
+    name : String
+    @baseType : String
+    @referredType : String
+    @schemaLocation : Uri
+    @type : String
+}
+
+class ResourceSpecificationRef  <<Ref>> {
+    href : String
+    id : String
+    name : String
+    version : String
+    @baseType : String
+    @referredType : String
+    @schemaLocation : Uri
+    @type : String
+}
+
+class RelatedPartyRef  <<Ref>> {
+    href : String
+    id : String
+    name : String
+    role : String
+    @baseType : String
+    @referredType : String
+    @schemaLocation : Uri
+    @type : String
+}
+
+ChannelRef "0..*" <-left-* AvailabilityCheck : channel
+
+AvailabilityCheck *-right-> "0..1" RelatedPartyRef : relatedParty
+
+RelatedEntity "0..*" <--* AvailabilityCheck : relatedEntity
+
+ProductOfferingRef "0..1" <--* AvailabilityCheck : productOffering
+
+AvailabilityCheck *-->  "0..1" ResourceSpecificationRef : resourceSpecification
+
+AvailabilityCheck *-->  "0..1" ResourcePoolRef : resourcePoolRef
+
+AvailabilityCheck *-->  "0..1" ResourceCapacityDemand : resourceCapacityDemand
+
+ResourcePoolRef *-->  "0..*" ResourceRef : resource
+
+ResourceCapacityDemand *-->  "0..1" Amount : amount
+
+@enduml
